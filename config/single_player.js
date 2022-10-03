@@ -1,6 +1,7 @@
 let game
 let player  
 let food
+let refreshGame
 
 
 function singlePlayer() {
@@ -13,8 +14,24 @@ function singlePlayer() {
     player.spawn()
     
     food = new Food(game.context)
+    
+    PlayPause(lvls)
 
     refresh(lvls)   
+}
+
+function PlayPause(lvls) {
+    document.getElementById("pause_player").addEventListener('click',()=>{
+        document.getElementById("play_player").style.display = "block"
+        document.getElementById("pause_player").style.display = "none"
+        clearInterval(refreshGame)
+    })
+
+    document.getElementById("play_player").addEventListener('click',()=>{
+        document.getElementById("play_player").style.display = "none"
+        document.getElementById("pause_player").style.display = "block"
+        refresh(lvls)
+    })
 }
 
 function getKeyPress() {
@@ -50,7 +67,7 @@ function getKeyPress() {
 
 function refresh(lvls) {
     
-    var refreshGame = setInterval(()=>{
+    refreshGame = setInterval(()=>{
         game.clear()
         food.spawn()        
         player.move(lvls[game.lvl].vel)

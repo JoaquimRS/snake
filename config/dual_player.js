@@ -4,6 +4,8 @@ let player_1
 let player_2
 let food_1
 let food_2
+let refreshGame_1
+let refreshGame_2
 
 function dualPlayers() {
     getDualKeyPress()
@@ -21,11 +23,38 @@ function dualPlayers() {
     food_1 = new Food(game_1.context)
     food_2 = new Food(game_2.context)
 
+    PlayPause_DP(lvls)
+
+
     refresh_p1(lvls)
     refresh_p2(lvls)
 
+}
 
+function PlayPause_DP(lvls) {
+    document.getElementById("pause_player_1").addEventListener('click',()=>{
+        document.getElementById("play_player_1").style.display = "block"
+        document.getElementById("pause_player_1").style.display = "none"
+        clearInterval(refreshGame_1)
+    })
 
+    document.getElementById("play_player_1").addEventListener('click',()=>{
+        document.getElementById("play_player_1").style.display = "none"
+        document.getElementById("pause_player_1").style.display = "block"
+        refresh_p1(lvls)
+    })
+
+    document.getElementById("pause_player_2").addEventListener('click',()=>{
+        document.getElementById("play_player_2").style.display = "block"
+        document.getElementById("pause_player_2").style.display = "none"
+        clearInterval(refreshGame_2)
+    })
+
+    document.getElementById("play_player_2").addEventListener('click',()=>{
+        document.getElementById("play_player_2").style.display = "none"
+        document.getElementById("pause_player_2").style.display = "block"
+        refresh_p2(lvls)
+    })
 }
 
 function getDualKeyPress() {
@@ -60,7 +89,7 @@ function getDualKeyPress() {
 }
 
 function refresh_p1(lvls) {
-    var refreshGame_1 = setInterval(()=>{
+    refreshGame_1 = setInterval(()=>{
         game_1.clear()
         food_1.spawn()
         player_1.move(lvls[game_1.lvl].vel)
@@ -98,7 +127,7 @@ function refresh_p1(lvls) {
 }
 
 function refresh_p2(lvls) {
-    var refreshGame_2 = setInterval(()=>{
+    refreshGame_2 = setInterval(()=>{
         game_2.clear()
         food_2.spawn()
         player_2.move(lvls[game_2.lvl].vel)

@@ -5,6 +5,52 @@ body {
     
     font-family: 'Bangers', cursive;
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    /* background-color: #fefefe; */
+    margin: 15% auto;
+    padding: 20px;
+    /* border: 1px solid #888; */
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rigth-img {
+    position: absolute;
+    top: 150px;
+    right: 400px;
+}
+
+.left-img {
+    position: absolute;
+    top: 150px;
+    left: 400px;
+}
+
+.how-to-play {
+    font-size: 5em;
+    position: absolute;
+    top: 10%;
+}
+.how-to-play-dp {
+    font-size: 5em;
+    position: absolute;
+    top: 0;
+}
 
 .main {
     display: flex;
@@ -84,7 +130,56 @@ body {
     width: 340px;
 }
 
+.play_player {
+    display: none;
+    position: fixed;
+    top: 30px;
+    width: 50px;
+    right: 49%;
+    cursor: pointer;
+}
 
+.pause_player {
+    position: fixed;
+    top: 30px;
+    width: 50px;
+    right: 49%;
+    cursor: pointer;
+}
+
+.play_player_1 {
+    display: none;
+    position: fixed;
+    top: 30px;
+    width: 50px;
+    right: 30%;
+    cursor: pointer;
+}
+
+.pause_player_1 {
+    position: fixed;
+    top: 30px;
+    width: 50px;
+    right: 30%;
+    cursor: pointer;
+}
+
+.play_player_2 {
+    display: none;
+    position: fixed;
+    top: 30px;
+    width: 50px;
+    right: 67%;
+    cursor: pointer;
+}
+
+.pause_player_2 {
+    position: fixed;
+    top: 30px;
+    width: 50px;
+    right: 67%;
+    cursor: pointer;
+}
 .score-container_player {
     position: fixed;
     top: 0;

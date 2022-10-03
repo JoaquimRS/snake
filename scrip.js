@@ -57,7 +57,6 @@ function menu() {
     })
 
     dp_container.addEventListener('click',()=>{
-        console.log("2 Players");
         main.remove()
         dualPlayers()
     })
