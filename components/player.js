@@ -56,4 +56,13 @@ class Player {
             body.dead()
         });
     }
+    restart() {
+        this.x = 0;
+        this.y = 0;
+        this.l_x = 0
+        this.l_y = 0
+        this.dead = false
+        this.direction = "RIGHT"
+        this.bodies = []
+    }
 }

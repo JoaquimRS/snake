@@ -39,11 +39,11 @@ class GameArea {
         p_lvl.id = "lvl_"+this.player
         p_lvl.appendChild(document.createTextNode("LVL: 1"))
 
-        pause.src = "../img/pause.png"
+        pause.src = "./img/pause.png"
         pause.className = "pause_"+this.player
         pause.id = "pause_"+this.player
 
-        play.src = "../img/play.png"
+        play.src = "./img/play.png"
         play.className = "play_"+this.player
         play.id = "play_"+this.player
 
@@ -72,8 +72,8 @@ class GameArea {
         modalContent.className = "modal-content"
         text.appendChild(document.createTextNode("HOW TO PLAY"))
         text.className="how-to-play"
-        img_1.src = "../img/arrows.png"
-        img_2.src = "../img/wasd.png"
+        img_1.src = "./img/arrows.png"
+        img_2.src = "./img/wasd.png"
 
         if (this.player != "player") {
             img_1.className = "rigth-img"    
@@ -116,6 +116,10 @@ class GameArea {
 
         document.getElementById("score_"+this.player).innerHTML = "Score: "+this.score
         document.getElementById("lvl_"+this.player).innerHTML = "LVL: "+(this.lvl+1)
+    }
+    restart() {
+        this.score = 0
+        this.lvl = 0
     }
 
 }

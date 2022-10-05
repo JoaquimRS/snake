@@ -8,7 +8,7 @@ let refreshGame_1
 let refreshGame_2
 
 function dualPlayers() {
-    getDualKeyPress()
+    getDualKeyPress(lvls)
     
     game_1 = new GameArea("player_2")
     game_2 = new GameArea("player_1")
@@ -57,7 +57,7 @@ function PlayPause_DP(lvls) {
     })
 }
 
-function getDualKeyPress() {
+function getDualKeyPress(lvls) {
     window.onkeydown = (event) => {
         switch (event.key.toUpperCase()) {
             case "W":
@@ -83,6 +83,24 @@ function getDualKeyPress() {
                 break;
             case "ARROWRIGHT":
                 player_1.setDir("RIGHT");
+                break;
+            case "R":
+                player_2.restart()
+                game_2.restart()
+                clearInterval(refreshGame_2)
+                refresh_p2(lvls)
+                break;
+            case "DELETE":
+                player_1.restart()
+                game_1.restart()
+                clearInterval(refreshGame_1)
+                refresh_p1(lvls)
+                break;
+            case ".":
+                player_1.restart()
+                game_1.restart()
+                clearInterval(refreshGame_1)
+                refresh_p1(lvls)
                 break;
         }
     }

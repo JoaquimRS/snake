@@ -1,19 +1,19 @@
 let lvls = [
     {
-        fps: 500,
+        fps: 300,
         vel: 20
     },
     {
-        fps: 400,
+        fps: 250,
         vel: 20
     },
     {
-        fps:300,
+        fps:200,
         vel:20
     }
     ,
     {
-        fps:200,
+        fps:150,
         vel:20
     },
     {
